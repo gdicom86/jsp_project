@@ -1,0 +1,43 @@
+package orm;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class DatabaseConnector {
+
+	//private = 싱글톤 방식
+	private static DatabaseConnector dbc = new DatabaseConnector();
+	//url, user , password 
+	private Connection conn = null; //DB관련 접속 규격
+	//jdbc driver
+	private String jdbcDriver = "com.mysql.jdbc.Driver";
+	//mysql URL
+	private String jdbcUrl = "jdbc:mysql://localhost/javadb"; //db변경시 javadb만 변경~!
+	
+	private DatabaseConnector() {
+		try {
+			
+			Class.forName(jdbcDriver); //드라이버 연결
+			conn = DriverManager.getConnection(jdbcUrl,"javauser","mysql"); //url, user , password 연결
+			
+		} catch (ClassNotFoundException e) {
+			// 드라이버가 오류인경우
+			System.out.println("jdbc 드라이버를 찾을 수 없음");
+			e.printStackTrace();
+		}catch (SQLException e) {
+			// url이 오류인 경우
+			System.out.println("url 연결 정보가 옳지 않습니다");
+			e.printStackTrace();
+		}
+	}
+	
+	public static DatabaseConnector getInstance() {
+		return dbc;
+	}
+	
+	public Connection getInstance() {
+		return conn;
+	}
+	
+}

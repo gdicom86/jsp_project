@@ -1,0 +1,14 @@
+package repository;
+
+import domain.productVO;
+
+public class ProductDAO implements DAO {
+	//dao는 db랑 연결해야하므로 DBconnector을 만들어야함
+	
+	@Override
+	public int insert(productVO pvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

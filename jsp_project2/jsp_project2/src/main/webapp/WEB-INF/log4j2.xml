@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configration status="DEBUG"> <!-- status: 버그를 얼마나 자세하게 띄울것인지 지정 -->
+	<Appenders>
+		<console name="console" target="SYSTEM_OUT"> <!-- 하단에 출력하겠다 -->
+			<PatternLayout pattern="%d - %msg%n"></PatternLayout> <!-- 패턴은 날짜 - 메세지로 하겠다 -->
+		</console>
+	</Appenders>
+	
+	<Loggers> <!-- 로그작업(로깅작업)의 주체를 누구로 할것인가 (필요에따라 사용) -->
+		<Root level="DEBUG"> <!-- 루트레벨은 어떤것으로 할것인가 (반드시 필요) -->
+			<AppenderRef ref="console" /> <!-- '/>'는 닫는 태그 대신 사용 가능, 루트레벨(로그)은 어디에 출력할 것인가 -->
+		
+		</Root>
+		
+	</Loggers>
+</Configration>

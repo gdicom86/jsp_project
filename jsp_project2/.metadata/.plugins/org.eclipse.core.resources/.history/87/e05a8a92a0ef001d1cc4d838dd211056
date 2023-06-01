@@ -1,0 +1,21 @@
+package service;
+
+import domain.productVO;
+
+public class ProductService implements Service {
+
+	//dao객체가 없으니 여기서 생성!
+	private DAO dao;
+	
+	public ProductService() {
+		dao = new ProductDAO();
+	}
+	
+	@Override
+	public int register(productVO pvo) {
+		// TODO Auto-generated method stub
+		System.out.println(">>> register service 진입성공 ");
+		return  ;
+	}
+
+}

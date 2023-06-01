@@ -1,0 +1,33 @@
+package repository;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+
+import domain.productVO;
+import orm.DatabaseConnector;
+
+public class ProductDAO implements DAO {
+	//dao는 db랑 연결해야하므로 DBconnector을 만들어야함
+	
+	//DB connector
+	private Connection conn;
+	//DB 연결후 sql전송 객체
+	private PreparedStatement pst;
+	//쿼리문 작성 변수
+	private String query ="";
+	
+	//생성자
+	public ProductDAO() {
+		//싱글톤 방식의 객체 생성
+		DatabaseConnector dbc = DatabaseConnector.getInstance();
+		//연결정보
+		conn = dbc.getConnection();
+	}
+	
+	@Override
+	public int insert(productVO pvo) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+}

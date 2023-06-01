@@ -1,0 +1,47 @@
+package domain;
+
+public class ProductVO {
+	
+	/*
+	 * create table product( pno int auto_increment, pname varchar(50) not null,
+	 * price int not null, regdate datetime default now(), madeby varchar(50) not
+	 * null, primary key(pno));
+	 */
+
+	private int pno;
+	private String pname;
+	private int price;
+	private String regdate;
+	private String madeby;
+	
+	public ProductVO() {}
+	
+	public ProductVO(String pname, int price, String madeby) {
+		this.pname = pname;
+		this.price = price;
+		this.madeby = madeby;
+	}
+	
+	//상품리스트(상품명 가격)
+	public ProductVO(int pno, String pname, String regdate) {
+		this.pno = pno;
+		this.pname = pname;
+		this.regdate = regdate;
+	}
+	
+	//상품상세(전부)
+	public ProductVO(int pno, String pname, int price, String regdate, String madeby) {
+		this.pno = pno;
+		this.pname = pname;
+		this.price = price;
+		this.regdate = regdate;
+		this.madeby = madeby;
+	}
+	
+	//상품수정
+	public ProductVO(int pno, String pname, int price, String madeby) {
+		this(pname,price,madeby);
+		this.pno = pno;
+	}
+	//상품 상세
+}

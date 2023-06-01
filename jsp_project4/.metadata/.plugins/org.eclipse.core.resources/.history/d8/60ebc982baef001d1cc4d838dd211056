@@ -1,0 +1,38 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>제품 상세 정보 페이지</title>
+</head>
+<body>
+	<h3>detail 제품 상세 정보 페이지</h3>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>번호 pno</th>
+				<th>상품명 pname</th>
+				<th>가격 price</th>
+				<th>등록일자 regdate</th>
+				<th>세부내용 madeby</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach items="${list }" var="pvo">
+			<tr>
+				<td>${pvo.pno }</td>
+				<td>${pvo.pname }</td>
+				<td>${pvo.price }</td>
+				<td>${pvo.regdate }</td>
+				<td>${pvo.madeby }</td>
+			</tr>
+			</c:forEach>
+		</tbody>
+	</table>
+	
+	<!-- 이동 버튼 -->
+	<a href="modify.pd"><button type="button">수정</button></a>
+	<a href="list.pd"><button type="button">취소</button></a>
+</body>
+</html>

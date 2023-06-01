@@ -1,0 +1,7 @@
+package handler;
+
+import org.slf4j.LoggerFactory;
+
+public class FileHandler {
+	private static Logger log = LoggerFactory.getILogger(FileHandler.class);
+}

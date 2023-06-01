@@ -1,0 +1,14 @@
+package service;
+
+import domain.productVO;
+
+public class ProductService implements Service {
+
+	@Override
+	public int register(productVO pvo) {
+		// TODO Auto-generated method stub
+		System.out.println(">>> register service 진입성공 ");
+		return  ;
+	}
+
+}

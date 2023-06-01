@@ -1,0 +1,9 @@
+package service;
+
+import domain.productVO;
+
+public interface Service {
+
+	int register(productVO pvo);
+
+}
